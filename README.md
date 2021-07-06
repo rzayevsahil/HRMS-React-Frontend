@@ -1,3 +1,9 @@
+## *Projenin favoriler kısmı(video sesi default olarak kapalı geliyor,"Sesi açarak müzik eşliğinde dinleyin :D iyi seyirler :D")*
+https://user-images.githubusercontent.com/58303745/124525105-f66a4480-de0e-11eb-92e5-17d5a94d0f23.mp4
+
+---
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
