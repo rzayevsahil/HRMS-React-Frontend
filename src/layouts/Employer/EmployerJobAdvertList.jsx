@@ -22,7 +22,7 @@ let changeIsOpenByEmployer = (id)=> {
     return (
         <div>
             <div className="my-div"
-        style={{ marginLeft: "2rem",height: '100vh',marginBottom:"300vh"}}> 
+        style={{ marginLeft: "2rem",height: '100vh',marginBottom:"300vh"}}>  
             <Card fluid color="violet" header="İŞ İLANLARIM" /> 
             <Table celled>
         <Table.Header>
