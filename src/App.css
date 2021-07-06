@@ -79,3 +79,12 @@
 .favoriMessageİmage{
   position: center;
 }
+
+.employeeStyle{
+  margin-top: 6px;
+  font-weight: bold;
+}
+
+.employeeStyle1{
+  font-family: Georgia, 'Times New Roman', Times, serif
+}
