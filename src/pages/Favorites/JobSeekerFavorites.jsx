@@ -31,7 +31,8 @@ export default function JobSeekerFavorites() {
               Favoriler listesi
             </Message>
           </Table>
-            {favorites?.map((favorite,key)=>(
+          {favorites?.lenght>0?(
+            favorites?.map((favorite,key)=>(
                 <Card style={{ marginTop: "25px" }} fluid color="violet" key={key}>
                 <Card.Content>
                 {(moment(favorite?.jobAdvert.publishedAt).locale("tr").fromNow()[0] <= "2" &&
@@ -128,7 +129,21 @@ export default function JobSeekerFavorites() {
                   </Card.Content>
                 )}
               </Card>
-            ))}
+            ))
+            ):(
+              // <div>
+               <Table>
+           <Message info color="red" visible style={{fontSize:"20px"}} className="favoriMessage" size="big"> 
+               <Icon name="ban" size="big" style={{marginRight:"0em"}}/> Liste boş
+               {/* <Image src="https://img.icons8.com/ios/50/000000/empty-set.png" className="favoriMessageİmage" style={{marginLeft:"14.5em",color:"red",marginBottom:"-2em"}}/> */}
+                {/* <Image src="https://img.icons8.com/ios/50/000000/wish-list.png" className="favoriMessageİmage" style={{marginLeft:"22em",color:"red",marginBottom:"-2.5em"}}/>
+          
+          <span style={{fontSize:"25px",color:"red"}}>Liste boş</span>
+          </div> */}
+          </Message>
+           </Table>
+        
+            )}
             
         </div>
     )

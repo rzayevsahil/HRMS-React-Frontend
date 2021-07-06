@@ -9,7 +9,7 @@
 
 .homeDiv2 {
   margin-top: 50px;
-  background-image: url("./anaSayfa.png");
+  background-image: url("./anaSayfa2.png");
   background-position: bottom;
   min-height: 800px; /* You must set a specified height */
   background-position: center; /* Center the image */
@@ -70,4 +70,12 @@
 
 .register1{
   margin-top: -56.5em;
+}
+
+.favoriMessage{
+  text-align: center;
+}
+
+.favoriMessageİmage{
+  position: center;
 }
