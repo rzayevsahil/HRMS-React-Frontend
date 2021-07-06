@@ -1,0 +1,73 @@
+.App {
+  text-align: center;
+}
+
+.ui.main.container{
+  margin-top: 6em;
+  
+}
+
+.homeDiv2 {
+  margin-top: 50px;
+  background-image: url("./anaSayfa.png");
+  background-position: bottom;
+  min-height: 800px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+}
+
+.onYazi {
+  font-size: 25px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(240, 245, 255);
+  text-shadow: 4px 4px 10px black;
+  font-weight: normal;
+  font-style: italic;
+  margin-top: 3em;
+  background-color: teal;
+}
+
+.homeDiv {
+  margin-top: 50px;
+  min-height: 1000px;
+}
+.myHeader {
+  font-size: 37px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: azure;
+  text-shadow: 2px 2px 5px black;
+  /* margin-top: 100em; */
+}
+
+.startbutton {
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+}
+
+.footer{
+  margin-top: 5em;
+}
+
+.deneme{
+  background-color:rgb(11, 192, 192);
+}  
+
+.deneme1{
+  transition-timing-function: linear;
+
+}
+
+.register2{
+  background-image: url("./register.png");
+  background-position: bottom;
+  min-height: 800px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+  /* margin-right: 30em; */
+}
+
+.register1{
+  margin-top: -56.5em;
+}

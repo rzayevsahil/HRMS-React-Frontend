@@ -1,0 +1,10 @@
+.landpage-image{
+    height: 55%;
+}
+
+.landpage-image{
+  background-image: url(../../assets/logo.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
