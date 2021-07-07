@@ -195,7 +195,6 @@ export default function JobAdvertList() {
               // src="../assets/logo.png"
             >
 
-
               <FavoritesAddDelete jobAdvert={jobAdvert} jobSeeker={jobSeeker}/>
               {/* <JobSeekerFavorites jobAdvert={jobAdvert} jobSeeker={jobSeeker}/> */}
 

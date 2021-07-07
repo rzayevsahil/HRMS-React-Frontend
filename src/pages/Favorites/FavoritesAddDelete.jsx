@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Icon } from 'semantic-ui-react'
+import { Button, Icon } from 'semantic-ui-react'
 import FavoriteService from '../../services/favoritesService'
 
 export default function FavoritesAddDelete({jobSeeker,jobAdvert}) {
@@ -16,7 +16,7 @@ export default function FavoritesAddDelete({jobSeeker,jobAdvert}) {
     }, [])
     return (
         <div>
-              {/* <Button.Content  hidden>Favorilere ekle</Button.Content> */}
+             
               {favorite?(
                 <Icon
                 onClick={() => {

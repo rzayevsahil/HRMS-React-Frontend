@@ -95,9 +95,10 @@
 
 
 /* bunu kullanmadım */
-.bgactiveemployer{
+ /* background-repeat: no-repeat; */
+/* .bgactiveemployer{
   background-image: url("./update.jpg");
-  /* background-repeat: no-repeat; */
+ 
   background-position-x: center;
   background-position-y: 70em;
   background-size: 100em 50em;
@@ -105,4 +106,4 @@
   width: 80em;
   padding-top: 1em;
   padding-left: 5em;
-}
+} */

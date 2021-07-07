@@ -43,7 +43,7 @@ export default function SignIn() {
       })
       }else{
         swal("Başarıyla giriş yapıldı","","success");
-        history.push("/signIn")
+        history.push("/jobAdverts")
 
       }})
       
