@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Calendar from "react-calendar";
 import 'react-calendar/dist/Calendar.css';
-import { Button, Image, Modal } from 'semantic-ui-react'
+import { Button, Modal } from 'semantic-ui-react'
 
 export default function Takvim({visiblate}) {
     const [value, onChange] = useState(new Date());

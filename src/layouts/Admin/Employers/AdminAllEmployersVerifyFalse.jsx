@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Table, Button, Icon, Divider, Message } from "semantic-ui-react";
+import { Table, Button, Icon, Message } from "semantic-ui-react";
 import EmployerService from "../../../services/employerService";
 import VerificationEmployerService from "../../../services/verificationEmployerService";
 export default function AdminAllEmployersVerifyFalse() {

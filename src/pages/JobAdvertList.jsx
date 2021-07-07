@@ -17,7 +17,6 @@ import moment from "moment";
 import "moment/locale/tr";
 import JobSeekerService from "../services/jobSeekerService";
 import FavoritesAddDelete from "./Favorites/FavoritesAddDelete";
-import JobSeekerFavorites from "./Favorites/JobSeekerFavorites";
 
 export default function JobAdvertList() {
   moment.locale("tr");

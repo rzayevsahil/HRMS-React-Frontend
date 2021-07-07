@@ -1,18 +1,10 @@
 import React, { useEffect, useState } from "react";
 import JobPositionService from "../../services/jobPositionService";
 import UserService from "../../services/userService";
-import { NavLink } from "react-router-dom";
 import {
-  Divider,
-  Menu,
-  Card,
-  Button,
-  Transition,
   Progress,
   Segment,
-  Label,
-  Message,
-  Icon
+  Message
 } from "semantic-ui-react";
 import Calendar from "react-calendar";
 import 'react-calendar/dist/Calendar.css';

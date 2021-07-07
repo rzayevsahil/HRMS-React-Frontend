@@ -1,12 +1,9 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
-    Checkbox,
     Divider,
     Grid,
-    Header,
     Icon,
-    Image,
     Menu,
     Segment,
     Sidebar,

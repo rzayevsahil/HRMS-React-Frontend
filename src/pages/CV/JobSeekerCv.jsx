@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Card, Divider, Icon, Image, Label, Message, Rating, Table} from "semantic-ui-react";
+import { Card, Divider, Icon, Image, Label, Message, Rating } from "semantic-ui-react";
 import JobSeekerService from "../../services/jobSeekerService";
 import CoverLetterUpdate from "./CoverLetterForCv/CoverLetterUpdate";
 import EducationAdd from "./EducationForCv/EducationAdd";

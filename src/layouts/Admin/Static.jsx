@@ -8,20 +8,15 @@ import {
   Card,
   Button,
   Transition,
-  Progress,
-  Segment,
   Label,
-  Message,
   Icon
 } from "semantic-ui-react";
 import JobSeekerService from "../../services/jobSeekerService";
 import JobAdvertService from "../../services/jobAdvertService";
 import EmployeeService from "../../services/employeeService";
 import EmployerService from "../../services/employerService";
-import Calendar from "react-calendar";
 import 'react-calendar/dist/Calendar.css';
 import './Static.css'
-import StatisticalContent from "./StatisticalContent";
 import Takvim from "./Calendar";
 
 export default function Static() {

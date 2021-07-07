@@ -1,7 +1,6 @@
 import React from "react";
-import { Button, Divider ,Grid} from 'semantic-ui-react'
+import { Button, Grid } from 'semantic-ui-react'
 import { NavLink } from 'react-router-dom'
-import { Route } from 'react-router'
 
 export default function AdminEmployers() {
   return (

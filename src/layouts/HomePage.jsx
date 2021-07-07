@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import {
   Image,
@@ -16,11 +16,11 @@ import {
 } from "semantic-ui-react";
 
 export default function HomePage() {
-  const [active, setActive] = useState(false);
+  // const [active, setActive] = useState(false);
 
-  function handleChange() {
-    setActive(!active);
-  }
+  // function handleChange() {
+  //   setActive(!active);
+  // }
   return (
     <div>
       <div className="homeDiv">

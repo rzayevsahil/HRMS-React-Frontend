@@ -14,6 +14,7 @@ import {
 } from "semantic-ui-react";
 import { useFormik } from "formik";
 import AuthService from "../services/authService";
+import swal from "sweetalert";
 
 export default function Register() {
 
@@ -23,41 +24,59 @@ export default function Register() {
     setVisible(!visible);
   }
 
-  let authService = new AuthService();
+  
   const jobSeekerRegisterSchema = Yup.object().shape({
-    birthDate: Yup.date().required("Doğum Tarihi zorunludur"),
+    dateOfBirth: Yup.date().required("Doğum Tarihi zorunludur"),
     email: Yup.string().required("Email alanı zorunludur").email("Geçerli bir email değil"),
     firstName: Yup.string().required("İsim zorunludur"),
     lastName: Yup.string().required("Soy isim zorunludur"),
-    nationalNumber: Yup.string().required("Kimlik numarası zorunludur").length(11,"Kımlık numarası hatalı").matches(/^[0-9]+$/, "Sadece rakam girilmelidir"),
+    nationalId: Yup.string().required("Kimlik numarası zorunludur").length(11,"Kimlik numarası hatalı").matches(/^[0-9]+$/, "Sadece rakam girilmelidir"),
     password: Yup.string().required("Şifre zorunludur").min(8,"Şifre en az 8 karakter uzunlugunda olmalıdır"),
-    rePassword: Yup.string().oneOf([Yup.ref("password"),null], "Şifreler eşleşmiyor")
+    confirmPassword: Yup.string().oneOf([Yup.ref("password"),null], "Şifreler eşleşmiyor")
   });
 
   const history = useHistory();
 
   const formik= useFormik({
     initialValues: {
-      birthDate:"",
+      dateOfBirth:"",
       email:"",
       firstName:"",
       lastName:"",
-      nationalNumber:"",
+      nationalId:"",
       password:"",
-      rePassword:"",
+      confirmPassword:"",
+      active: true,
+      deleted: false,
+      verified: false
     },
     validationSchema: jobSeekerRegisterSchema,
     onSubmit:(values) => {
       console.log(values)
-      //candidateService.registerCandidate(values).then((result) => alert(result.message))
+      console.log(values,values.confirmPassword)
+      let jobSeekerService = new AuthService();
+      jobSeekerService.registerJobseeker(values,values.confirmPassword).then((result) =>  {
+      if (result.data.success===false) {
+       return swal(
+       {
+        title: result.data.message,
+        text: "",
+        icon: "warning",
+        dangerMode: true,
+        button:"Kapat"
+      })
+      }else{
+        swal("Başarıyla kayıt oldunuz","","success");
+        history.push("/signIn")
+
+      }})
       
-      history.push("/login")
     }
   });
 
   const handleChangeSemantic = (value, fieldName) => {
-    formik.setFieldValue(fieldName,value);
-  }
+    formik.setFieldValue(fieldName, value);
+  };
 
   return (
     <div style={{marginLeft:"15%",marginTop:"100px"}}>
@@ -113,21 +132,21 @@ export default function Register() {
                 )}
               </div>
               <div style={{marginTop:"1em"}}>
-              <label><b>Kimlik Numarası</b></label>
+              <label><b>Kimlik Numarası(TC)</b></label>
               <Form.Input
                 fluid
                 icon="id card"
                 iconPosition="left"
                 placeholder="Kimlik numarası"
                 type="text"
-                value={formik.values.nationalNumber}
-                name="nationalNumber"
+                value={formik.values.nationalId}
+                name="nationalId"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
               />
-              {formik.errors.nationalNumber && formik.touched.nationalNumber && (
+              {formik.errors.nationalId && formik.touched.nationalId && (
                   <div className={"ui pointing red basic label"}>
-                    {formik.errors.nationalNumber}
+                    {formik.errors.nationanationalIdlNumber}
                   </div>
                 )}
               </div>
@@ -139,17 +158,17 @@ export default function Register() {
                 iconPosition="left"
                 placeholder="Dogum tarihi"
                 type="date"
-                error={Boolean(formik.errors.birthDate)}
+                error={Boolean(formik.errors.dateOfBirth)}
                 onChange={(event, data) =>
-                  handleChangeSemantic(data.value, "birthDate")
+                  handleChangeSemantic(data.value, "dateOfBirth")
                 }
-                value={formik.values.birthDate}
+                value={formik.values.dateOfBirth}
                 onBlur={formik.handleBlur}
-                name="birthDate"
+                name="dateOfBirth"
               />
-              {formik.errors.birthDate && formik.touched.birthDate && (
+              {formik.errors.dateOfBirth && formik.touched.dateOfBirth && (
                   <div className={"ui pointing red basic label"}>
-                    {formik.errors.birthDate}
+                    {formik.errors.dateOfBirth}
                   </div>
                 )}
               </div>
@@ -227,14 +246,14 @@ export default function Register() {
                 iconPosition="left"
                 placeholder="Şifre tekrar"
                 type="password"
-                value={formik.values.rePassword}
+                value={formik.values.confirmPassword}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                name="rePassword"
+                name="confirmPassword"
               />
-              {formik.errors.rePassword && formik.touched.rePassword && (
+              {formik.errors.confirmPassword && formik.touched.confirmPassword && (
                   <div className={"ui pointing red basic label"}>
-                    {formik.errors.rePassword}
+                    {formik.errors.confirmPassword}
                   </div>
                 )}
               </div>):(
@@ -246,14 +265,14 @@ export default function Register() {
                   iconPosition="left"
                   placeholder="Şifre tekrar"
                   type="text"
-                  value={formik.values.rePassword}
+                  value={formik.values.confirmPassword}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
-                  name="rePassword"
+                  name="confirmPassword"
                 />
-                {formik.errors.rePassword && formik.touched.rePassword && (
+                {formik.errors.confirmPassword && formik.touched.confirmPassword && (
                     <div className={"ui pointing red basic label"}>
-                      {formik.errors.rePassword}
+                      {formik.errors.confirmPassword}
                     </div>
                   )}
                 </div>

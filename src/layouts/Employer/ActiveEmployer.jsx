@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import EmployerService from "../../services/employerService";
 import VerificationEmployerService from "../../services/verificationEmployerService";
-import { Card, Icon, Button, Grid,Message, Table, Divider } from "semantic-ui-react";
+import { Card, Grid,Message, Table, Divider } from "semantic-ui-react";
 import ActiveEmployerUpdate from "./ActiveEmployerUpdate";
 
 export default function ActiveEmployer() {
