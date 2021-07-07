@@ -116,36 +116,6 @@ export default function ActiveEmployerUpdate({ employer }) {
             <Grid stackable>
                 <GridRow>
               <GridColumn width={7}>
-                <Form.Field style={{marginLeft:".8em",width:"35em"}}>
-                  <label>Email</label>
-                  <input
-                    name="email"
-                    placeholder="email"
-                    value={values.email}
-                    onChange={handleChange}
-                  />
-                  {errors.email && touched.email && (
-                    <Label basic color="red" pointing>
-                      {errors.email}
-                    </Label>
-                  )}
-                </Form.Field>
-              {/* </GridColumn>
-              <GridColumn width={7}> */}
-                <Form.Field style={{marginLeft:".8em",width:"35em"}}>
-                  <label>Şifre</label>
-                  <input
-                    name="password"
-                    placeholder="password"
-                    value={values.password}
-                    onChange={handleChange}
-                  />
-                  {errors.password && touched.password && (
-                    <Label basic color="red" pointing>
-                      {errors.password}
-                    </Label>
-                  )}
-                </Form.Field>
               {/* </GridColumn>
               <GridColumn width={7}> */}
                 <Form.Field style={{marginLeft:".8em",width:"35em"}}>
@@ -191,6 +161,36 @@ export default function ActiveEmployerUpdate({ employer }) {
                   {errors.phoneNumber && touched.phoneNumber && (
                     <Label basic color="red" pointing>
                       {errors.phoneNumber}
+                    </Label>
+                  )}
+                </Form.Field>
+                <Form.Field style={{marginLeft:".8em",width:"35em"}}>
+                  <label>Email</label>
+                  <input
+                    name="email"
+                    placeholder="email"
+                    value={values.email}
+                    onChange={handleChange}
+                  />
+                  {errors.email && touched.email && (
+                    <Label basic color="red" pointing>
+                      {errors.email}
+                    </Label>
+                  )}
+                </Form.Field>
+              {/* </GridColumn>
+              <GridColumn width={7}> */}
+                <Form.Field style={{marginLeft:".8em",width:"35em"}}>
+                  <label>Şifre</label>
+                  <input
+                    name="password"
+                    placeholder="password"
+                    value={values.password}
+                    onChange={handleChange}
+                  />
+                  {errors.password && touched.password && (
+                    <Label basic color="red" pointing>
+                      {errors.password}
                     </Label>
                   )}
                 </Form.Field>

@@ -34,7 +34,8 @@ export default function EmployerDashboard() {
             animation='overlay'
             icon='labeled'
             inverted
-            onHide={() => setVisible(false)}
+            // onHide={() => setVisible(false)}
+            onClick={isVisible}
             vertical
             visible={visible}
             width='thin' 

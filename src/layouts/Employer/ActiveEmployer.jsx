@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import EmployerService from "../../services/employerService";
 import VerificationEmployerService from "../../services/verificationEmployerService";
-import { Card, Icon, Button, Grid,Message, Table } from "semantic-ui-react";
+import { Card, Icon, Button, Grid,Message, Table, Divider } from "semantic-ui-react";
 import ActiveEmployerUpdate from "./ActiveEmployerUpdate";
 
 export default function ActiveEmployer() {
@@ -21,70 +21,94 @@ export default function ActiveEmployer() {
   console.log(verificationEmployer);
 
   return (
-    <div style={{height:"75vh", marginTop:"8em"}}>
-      {/* {employer?.verified===false? (
-        <Table style={{marginBottom:"3em"}}>
-        <Message info color="orange" visible style={{paddingLeft:"33%"}} size="big">
-          Bilgileriniz Hrms personeli tarafından onaylandıktan sonra güncellenecektir
-        </Message>
-      </Table>
-      ):null} */}
-      
-      {!employer?.verified && (
-        
+    <div>
+      <div style={{ position: "relative", marginLeft: "200px",marginTop:"10em",height:"75vh" }}>
 
-        <Grid>
-          <Table style={{marginBottom:"3em"}}>
-        <Message info color="orange" visible style={{paddingLeft:"33%"}} size="big">
-          Bilgileriniz Hrms personeli tarafından onaylandıktan sonra güncellenecektir
-        </Message>
-      </Table>
-          <Card fluid>
-            <Card.Content>
-              <Card.Header>{employer?.companyName}</Card.Header>
-              <Card.Meta>
-                <span className="date">{employer?.email}</span>
-              </Card.Meta>
-              <Card.Description>{employer?.website}</Card.Description>
-              <Card.Description>{employer?.phoneNumber}</Card.Description>
-            </Card.Content>
-            <Card.Content extra>
-              <a>
-                <Icon name="user" />
-                22 Friends
-              </a>
-              {/* <ActiveEmployerUpdate employer={employer}></ActiveEmployerUpdate> */}
-            </Card.Content>
-            <Button></Button>
-          </Card>
+
+{!employer?.verified && (
+     <Table>
+  <Message info color="orange" visible className="activeemployer" size="big">
+    Bilgileriniz Hrms personeli tarafından onaylandıktan sonra güncellenecektir
+  </Message>
+</Table>)}
+{!employer?.verified && (
+  <Card style={{fontSize:"20px",width:"1000px",height:"300px"}}>
+   
+        <span style={{fontSize:"25px",marginRight:"30em",marginTop:"0.5em",color:"purple"}}>Özel Bilgiler</span><Divider/>
+        <Grid columns={2}>
+        <Grid.Row textAlign="center">
+          <Grid.Column style={{marginTop:"2em"}}>
+        <Card.Meta>
+        <span className='employeeStyle1'>Şirket ismi</span>
+        </Card.Meta>
+        <Card.Header className="employeeStyle">{employer?.companyName}</Card.Header>
+        </Grid.Column>
+        <Grid.Column style={{marginTop:"2em"}}>
+        <Card.Meta>
+        <span className='employeeStyle1'>Site ismi(domain)</span>
+        </Card.Meta>
+        <Card.Header className="employeeStyle">{employer?.website}</Card.Header>
+        </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+        <Grid.Column style={{marginTop:"2em"}}>
+        <Card.Meta>
+        <span className='employeeStyle1'>Email</span>
+        </Card.Meta>
+        <Card.Header className="employeeStyle">{employer?.email}</Card.Header>
+        </Grid.Column>
+        <Grid.Column style={{marginTop:"2em"}}>
+        <Card.Meta>
+        <span className='employeeStyle1'>Telefon numarası</span>
+        </Card.Meta>
+        <Card.Header className="employeeStyle">{employer?.phoneNumber}</Card.Header>
+        </Grid.Column>
+        </Grid.Row>
         </Grid>
-      )}
-      {employer?.verified && (
-        <Grid>
-          <Card fluid>
-            <Card.Content>
-              <Card.Header>{verificationEmployer?.companyName}</Card.Header>
-              <Card.Meta>
-                <span className="date">{verificationEmployer?.email}</span>
-              </Card.Meta>
-              <Card.Description>
-                {verificationEmployer?.website}
-              </Card.Description>
-              <Card.Description>
-                {verificationEmployer?.phoneNumber}
-              </Card.Description>
-            </Card.Content>
-            <Card.Content extra>
-              <a>
-                <Icon name="user" />
-                22 Friends
-              </a>
-              <ActiveEmployerUpdate employer={verificationEmployer}></ActiveEmployerUpdate>
-            </Card.Content>
-            <Button></Button>
-          </Card>
+        </Card>
+)}
+
+
+
+ {employer?.verified && (
+  <Card style={{fontSize:"20px",width:"1000px",height:"300px"}}>
+        <span style={{fontSize:"25px",marginRight:"30em",marginTop:"0.5em",color:"purple"}}>Özel Bilgiler</span><Divider/>
+        <div style={{ float: "right",marginRight:"1em",marginTop:"-2.8em" }}>
+        <ActiveEmployerUpdate employer={verificationEmployer}></ActiveEmployerUpdate>
+        </div>
+        <Grid columns={2}>
+        <Grid.Row textAlign="center">
+          <Grid.Column style={{marginTop:"2em"}}>
+        <Card.Meta>
+        <span className='employeeStyle1'>Şirket ismi</span>
+        </Card.Meta>
+        <Card.Header className="employeeStyle">{verificationEmployer?.companyName}</Card.Header>
+        </Grid.Column>
+        <Grid.Column style={{marginTop:"2em"}}>
+        <Card.Meta>
+        <span className='employeeStyle1'>Site ismi(domain)</span>
+        </Card.Meta>
+        <Card.Header className="employeeStyle">{verificationEmployer?.website}</Card.Header>
+        </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+        <Grid.Column style={{marginTop:"2em"}}>
+        <Card.Meta>
+        <span className='employeeStyle1'>Email</span>
+        </Card.Meta>
+        <Card.Header className="employeeStyle">{verificationEmployer?.email}</Card.Header>
+        </Grid.Column>
+        <Grid.Column style={{marginTop:"2em"}}>
+        <Card.Meta>
+        <span className='employeeStyle1'>Telefon numarası</span>
+        </Card.Meta>
+        <Card.Header className="employeeStyle">{verificationEmployer?.phoneNumber}</Card.Header>
+        </Grid.Column>
+        </Grid.Row>
         </Grid>
-      )}
+        </Card>)}
+
+</div>
     </div>
   );
 }

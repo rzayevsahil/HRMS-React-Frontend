@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Card, Divider, Grid, GridColumn, Image } from "semantic-ui-react";
+import { Card, Divider, Grid } from "semantic-ui-react";
 import EmployeeService from "../../services/employeeService";
 import EmployeeUpdate from "./EmployeeUpdate";
 
@@ -10,6 +10,8 @@ export default function EmployeeDetail() {
     let employeeService = new EmployeeService();
     employeeService.getById(29).then((result) => setEmployee(result.data.data));
   }, []);
+
+  
 
   return (
     <div>
@@ -42,6 +44,12 @@ export default function EmployeeDetail() {
         </Card.Meta>
         <Card.Header className="employeeStyle">{employee?.email}</Card.Header>
         </Grid.Column>
+        {/* <Grid.Column style={{marginTop:"2em"}}>
+        <Card.Meta>
+        <span className='employeeStyle1'>Şifre</span>
+        </Card.Meta>
+        <Card.Header className="employeeStyle">{employee?.password}</Card.Header>
+        </Grid.Column> */}
         </Grid.Row>
         </Grid>
         </Card>
